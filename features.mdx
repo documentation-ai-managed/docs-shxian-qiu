@@ -1,0 +1,127 @@
+---
+title: Core Features of Shxian Qiu
+description: Explore the main capabilities of Shxian Qiu for effective documentation organization and collaboration.
+---
+
+## Overview
+
+Shxian Qiu provides powerful tools to organize, version, collaborate on, and search your documentation. You streamline your workflow with intuitive features designed for teams and individual contributors.
+
+<Columns cols={3}>
+  <Card title="Organization" icon="folder" href="#organization">
+    Structure docs with folders and hierarchies.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#version-control">
+    Track changes like Git for your docs.
+  </Card>
+  <Card title="Collaboration" icon="users" href="#collaboration">
+    Work together in real-time.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Start by creating your first folder to organize content effectively.
+</Callout>
+
+## Document Organization and Folders
+
+You organize documentation using nested folders and intuitive hierarchies. Create folders to group related pages, making navigation seamless.
+
+<Steps>
+  <Step title="Create a Folder" icon="folder-plus">
+    Navigate to your workspace root. Click the `+` button and select `New Folder`. Name it `guides`.
+  </Step>
+  <Step title="Add Pages" icon="file-plus">
+    Inside the folder, add MDX pages. Drag and drop to reorder.
+  </Step>
+  <Step title="Nest Folders" icon="folder">
+    Right-click a folder to create subfolders like `guides/quickstart`.
+  </Step>
+</Steps>
+
+This structure supports unlimited nesting without performance issues.
+
+## Version Control for Docs
+
+Shxian Qiu integrates version control directly into your docs. You commit changes, view history, and revert as needed, similar to Git workflows.
+
+<Tabs>
+  <Tab title="Commit Changes" icon="git-commit">
+    Edit a page and click `Commit`. Add a message like `Update quickstart guide`.
+  </Tab>
+  <Tab title="View History" icon="history">
+    Select a page, go to `History` tab. Compare diffs between versions.
+  </Tab>
+  <Tab title="Revert" icon="undo">
+    Choose a version and select `Revert`. Confirm to restore.
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Branching" default-open="false">
+
+You create branches for experiments:
+
+```bash
+# Simulate branch creation via CLI
+shxian branch create feature/new-ui
+shxian checkout feature/new-ui
+```
+
+Merge via the UI with conflict resolution.
+
+</Expandable>
+
+## Collaboration Tools for Teams
+
+Invite team members to collaborate in real-time. You assign roles, comment on pages, and resolve reviews efficiently.
+
+| Feature | Description | Use Case |
+|---------|-------------|----------|
+| Real-time Editing | Multiple users edit simultaneously | Live workshops |
+| Comments & @Mentions | Inline feedback with notifications | Review cycles |
+| Permissions | Owner, Editor, Viewer roles | Team access control |
+| Activity Log | Track who changed what | Audit trails |
+
+<Callout kind="info">
+  Use `@username` to notify collaborators directly in comments.
+</Callout>
+
+## Search and Filtering Functionalities
+
+Powerful search helps you find content quickly. Filter by tags, folders, or full-text search across all docs.
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  // Search API example
+  const results = await fetch('https://api.example.com/docs/search?q=authentication&filter=folder:guides');
+  const data = await results.json();
+  console.log(data.hits); // Array of matching docs
+  ```
+  ```python
+  import requests
+  response = requests.get('https://api.example.com/docs/search', params={
+    'q': 'authentication',
+    'filter': 'folder:guides'
+  })
+  print(response.json()['hits'])
+  ```
+</CodeGroup>
+
+<ParamField query="q" param-type="string" required="true">
+  Search query string.
+</ParamField>
+
+<ParamField query="filter" param-type="string" required="false">
+  Filter by `folder:name` or `tag:feature`.
+</ParamField>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Set up your first project.
+  </Card>
+  <Card title="Authentication" icon="key" href="/authentication">
+    Secure your workspace.
+  </Card>
+</Columns>

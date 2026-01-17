@@ -1,0 +1,135 @@
+---
+title: Get Started with Shxian Qiu
+description: Set up your account and create your first documentation space in just a few minutes.
+---
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+<Callout kind="info">
+- A modern web browser like Chrome, Firefox, or Safari
+- An email address for account verification
+- Optional: Node.js `{>=18}` for CLI usage
+</Callout>
+
+## Sign Up and Verify Account
+
+Create your Shxian Qiu account in under two minutes.
+
+<Steps>
+  <Step title="Visit Dashboard" icon="globe">
+    Navigate to `https://dashboard.example.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Details" icon="user">
+    Provide your email, full name, and a strong password. Accept the terms.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification link from Shxian Qiu. Click it to activate your account.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard and sign in with your credentials.
+  </Step>
+</Steps>
+
+## Create Your First Documentation Space
+
+Organize your project docs with a new space.
+
+<Steps>
+  <Step title="Click New Space" icon="plus">
+    From the dashboard, select **New Documentation Space**.
+  </Step>
+  <Step title="Name Your Space" icon="edit-3">
+    Enter a name like `My Project Docs` and choose visibility: public or private.
+  </Step>
+  <Step title="Customize Settings" icon="settings">
+    Set brand color to `#3B82F6` and add a description: "Welcome to shxian qiu's documentation."
+  </Step>
+  <Step title="Save and Enter" icon="check-circle">
+    Click **Create**. You now land in your space's editor.
+  </Step>
+</Steps>
+
+## Upload Initial Documents
+
+Add content via web, CLI, or API.
+
+<Tabs>
+  <Tab title="Web UI" icon="mouse-pointer">
+    Drag and drop Markdown files into the editor or use **Upload** button.
+    
+    Supported formats: `.mdx`, `.md`, `.txt`.
+  </Tab>
+  <Tab title="CLI" icon="terminal">
+    Install the CLI first:
+    
+    <CodeGroup tabs="npm,yarn">
+    ````bash
+    npm install -g @shxianqiu/cli
+    ````
+    ````bash
+    yarn global add @shxianqiu/cli
+    ````
+    </CodeGroup>
+    
+    Upload a file:
+    
+    ````bash
+    shxianqiu upload --space "My Project Docs" --file README.md --api-key YOUR_API_KEY
+    ````
+  </Tab>
+  <Tab title="API" icon="code">
+    Use the upload endpoint:
+    
+    <Request tabs="cURL,JavaScript">
+    ````bash
+    curl -X POST https://api.example.com/v1/spaces/My%20Project%20Docs/documents \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -F "file=@README.md"
+    ````
+    ````javascript
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+    
+    fetch('https://api.example.com/v1/spaces/My%20Project%20Docs/documents', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+      body: formData
+    });
+    ````
+    </Request>
+  </Tab>
+</Tabs>
+
+<ParamField path="space" param-type="string" required="true">
+  Documentation space identifier, e.g., `My Project Docs`.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token: `Bearer YOUR_API_KEY`.
+</ParamField>
+
+## Basic Interface Tour
+
+Explore key areas:
+
+<Columns cols={3}>
+  <Card title="Editor" icon="edit-3" href="#editor">
+    Write and preview MDX docs with live rendering.
+  </Card>
+  <Card title="Spaces" icon="library" href="#spaces">
+    Manage multiple documentation projects.
+  </Card>
+  <Card title="Settings" icon="settings" href="#settings">
+    Customize themes, SEO, and integrations.
+  </Card>
+</Columns>
+
+## Next Steps
+
+<Callout kind="tip">
+  Publish your space at `https://docs.example.com/my-project-docs`. Explore [advanced editing](/introduction) or [integrations](/authentication).
+</Callout>
+
+Congratulations! You have a live documentation site. Dive deeper into customization next.

@@ -1,0 +1,105 @@
+---
+title: Welcome to Shxian Qiu
+description: Discover Shxian Qiu, your default documentation space for organizing and managing project documentation efficiently.
+---
+
+## Overview
+
+Shxian Qiu provides a centralized space for you to create, organize, and manage all your project documentation. You can build structured docs with Markdown and MDX support, collaborate with teams, and publish instantly. This platform streamlines your workflow, replacing scattered notes and wikis with a professional, searchable knowledge base.
+
+Use Shxian Qiu to document APIs, user guides, internal processes, and release notes. It integrates seamlessly with your Git workflow and supports version control for docs.
+
+<Callout kind="info">
+Shxian Qiu uses brand color `<#3B82F6>` for primary elements like buttons and headers. Apply it consistently: `background-color: #3B82F6;` or `--primary: #3B82F6;`.
+</Callout>
+
+## Key Benefits
+
+Shxian Qiu delivers powerful features for efficient documentation management.
+
+<Columns cols={3}>
+  <Card title="Organized Structure" icon="layout" href="#features">
+    Create nested pages, sidebars, and search. Navigate complex projects effortlessly.
+  </Card>
+  <Card title="Collaboration Ready" icon="users" href="#collaboration">
+    Share edits, comments, and previews. Version history tracks every change.
+  </Card>
+  <Card title="Customizable Themes" icon="palette" href="#branding">
+    Tailor with your brand color `<#3B82F6>`. Add custom CSS and components.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get up and running in minutes.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at `https://shxianqiu.com` with your email.
+  </Step>
+  <Step title="New Workspace" icon="plus">
+    Click "New Docs Space" and name it "My Project".
+  </Step>
+  <Step title="Add First Page" icon="file-plus">
+    Edit `introduction.mdx` and commit changes.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Deploy live at `https://docs.shxianqiu.com/my-project`.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+// Embed Shxian Qiu docs in your app
+import { DocsEmbed } from '@shxianqiu/embed';
+
+<DocsEmbed spaceId="your-space-id" themeColor="#3B82F6" />
+```
+```python
+# Python SDK example
+from shxianqiu import Client
+
+client = Client(api_key="YOUR_API_KEY")
+docs = client.spaces.get("your-space-id")
+print(docs.url)
+```
+</CodeGroup>
+
+## Brand Guidelines
+
+Follow these rules to maintain consistency.
+
+- **Primary Color:** `<#3B82F6>` (Blue) for CTAs, links, and accents.
+- **Typography:** Use system fonts like Inter or SF Pro.
+- **Icons:** Lucide set with 24px size.
+
+<Expandable title="Full Color Palette" default-open="false">
+  | Color     | Hex       | Usage              |
+  |-----------|-----------|--------------------|
+  | Primary  | `#3B82F6` | Buttons, headers  |
+  | Secondary| `#6B7280` | Text, borders     |
+  | Success  | `#10B981` | Confirmations     |
+</Expandable>
+
+## Next Steps
+
+Explore more with these guides.
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="zap" href="/quickstart">
+    Build your first doc page.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your docs space.
+  </Card>
+  <Card title="Configuration" icon="settings" href="/configuration">
+    Customize layouts and themes.
+  </Card>
+  <Card title="Changelog" icon="git-branch" href="/changelog">
+    Latest updates and features.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+Ready to dive deeper? Start with [Quickstart](/quickstart) for hands-on setup.
+</Callout>
